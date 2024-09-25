@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module03Exercise01.View.AddEmployeePage"
+             Title="Add Employee"
+             Padding="20"
+             BackgroundColor="#f0f4f7">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Label 
+                Text="Add Employee"
+                FontSize="18"
+                VerticalOptions="Center" 
+                HorizontalOptions="Center"
+                FontAttributes="Bold"
+                TextColor="#2c3e50"/>
+
+            <Image x:Name="CaptureImage"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   Aspect="AspectFill"
+                   Source="https://static.vecteezy.com/system/resources/thumbnails/009/292/244/small/default-avatar-icon-of-social-media-user-vector.jpg"/>
+
+
+            <Button Text="Capture Employee Photo"
+                   Clicked="OnCapturePhotoClicked"
+                   BackgroundColor="#2980b9"
+                   TextColor="White"
+                   CornerRadius="5"
+                   FontSize="15"/>
+
+            <Frame BackgroundColor="#ecf0f1" CornerRadius="10" Padding="10">
+                <VerticalStackLayout Spacing="8">
+                    <Entry Placeholder="Firstname"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="15"
+                           BackgroundColor="White"/>
+
+                    <Entry Placeholder="Lastname"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="15"
+                           BackgroundColor="White"/>
+
+                    <Entry Placeholder="Fullname"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="15"
+                           BackgroundColor="White"/>
+
+                    <Entry x:Name="MunicipalityEntry" 
+                           Placeholder="Municipality"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="15"
+                           BackgroundColor="White"/>
+
+                    <Entry x:Name="ProvinceEntry" 
+                           Placeholder="Province"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="15"
+                           BackgroundColor="White"/>
+
+                    <Entry Placeholder="Position"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="15"
+                           BackgroundColor="White"/>
+
+                    <Entry Placeholder="Department"
+                           HorizontalOptions="FillAndExpand"
+                           FontSize="15"
+                           BackgroundColor="White"/>
+                </VerticalStackLayout>
+            </Frame>
+
+            <Label x:Name="LocationLabel"
+                   Text="Location will appear here"
+                   FontSize="14"
+                   TextColor="#2c3e50"
+                   HorizontalOptions="CenterAndExpand"/>
+
+            <Button Text="Get Location"
+                    Clicked="OnGetLocationClicked"
+                    BackgroundColor="#2980b9"
+                    TextColor="White"
+                    CornerRadius="5"
+                    FontSize="18"/>
+
+            <Label x:Name="AddressLabel"
+                   Text="Address will appear here"
+                   FontSize="14"
+                   TextColor="#2c3e50"
+                   HorizontalOptions="CenterAndExpand"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

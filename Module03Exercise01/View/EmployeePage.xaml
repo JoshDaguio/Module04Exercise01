@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Module03Exercise01.View.EmployeePage"
+             Title="EmployeePage"
+             Padding="20"
+             BackgroundColor="#f0f4f7">
+
+    <VerticalStackLayout Spacing="20" Padding="20">
+        <Label 
+            Text="Employee List"
+            FontSize="24"
+            VerticalOptions="Center" 
+            HorizontalOptions="Center"
+            FontAttributes="Bold"
+            TextColor="#2c3e50"/>
+
+        <Frame BackgroundColor="#ecf0f1" CornerRadius="10" Padding="10">
+            <ListView ItemsSource="{Binding Employees}"
+                      HasUnevenRows="True"
+                      BackgroundColor="#ecf0f1">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="10" BackgroundColor="LightBlue">
+                                <Label Text="{Binding FullNames}" 
+                                       FontSize="18" 
+                                       FontAttributes="Bold" 
+                                       TextColor="#34495e"/>
+                                <Label Text="{Binding Position}" 
+                                       FontSize="16" 
+                                       TextColor="#2c3e50"/>
+                                <Label Text="{Binding Department}" 
+                                       FontSize="14" 
+                                       TextColor="#2c3e50"/>
+                                <Label Text="{Binding IsActive, StringFormat='Active: {0}'}" 
+                                       FontSize="12" 
+                                       TextColor="DarkGreen"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </Frame>
+
+        <Button Text="Display Manager"
+                Command="{Binding LoadEmployeeDataCommand}"
+                BackgroundColor="#2980b9"
+                TextColor="White"
+                CornerRadius="5"
+                FontSize="18"/>
+
+        <Frame BackgroundColor="#ecf0f1" CornerRadius="10" Padding="10">
+            <StackLayout Spacing="10" HorizontalOptions="Center">
+                <Label 
+                   Text="{Binding FullName}"
+                   FontSize="20"
+                   VerticalOptions="Center" 
+                   HorizontalOptions="Center" 
+                   FontAttributes="Bold"
+                   TextColor="#34495e"/>
+
+                <Label 
+                  Text="{Binding ManagerPosition}"
+                  FontSize="14"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Center"
+                  TextColor="#2c3e50"/>
+
+                <Label 
+                  Text="{Binding ManagerDepartment}"
+                  FontSize="12"
+                  VerticalOptions="Center" 
+                  HorizontalOptions="Center"
+                  TextColor="#2c3e50"/>
+            </StackLayout>
+        </Frame>
+        
+        <Button Text="Add Employee"
+                Clicked="OnAddEmployeeClicked"
+                BackgroundColor="#2980b9"
+                TextColor="White"
+                CornerRadius="5"
+                FontSize="18"/>
+    </VerticalStackLayout>
+</ContentPage>

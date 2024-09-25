@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="Module03Exercise01.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:Module03Exercise01.View"
+    Shell.FlyoutBehavior="Disabled"
+    Title="Module03Exercise01">
+
+    <!-- Define the routes for your pages -->
+    <ShellContent
+        Title="Login"
+        ContentTemplate="{DataTemplate views:LoginPage}"
+        Route="LoginPage" />
+
+    <ShellContent
+        Title="Employee"
+        ContentTemplate="{DataTemplate views:EmployeePage}"
+        Route="EmployeePage" />
+
+    <ShellContent
+        Title="Offline"
+        ContentTemplate="{DataTemplate views:OfflinePage}"
+        Route="OfflinePage" />
+    
+    <ShellContent
+        Title="AddEmployee"
+        ContentTemplate="{DataTemplate views:AddEmployeePage}"
+        Route="AddEmployee" />
+    
+
+</Shell>
